@@ -1,84 +1,361 @@
-<!DOCTYPE html>
-<html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Judcon2013 fuseesb : Welcome FuseESB!! New highly distributed soluction!!!" />
+<!doctype html>
+<html lang="en">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	<head>
+		<meta charset="utf-8">
 
-    <title>Judcon2013 fuseesb</title>
-  </head>
+		<title>JUDCon2013 - Big Data - Survival Guide!</title>
 
-  <body>
+		<meta name="description" content="Helping to understand the past, the present and future, Big Data is amazing subject. In this short presentation I want to invite you to a journey that will show about the history and the architecture of Big Data. The presentation is using reveal.js + HTML5">
+		<meta name="author" content="Luan Cestari">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/luan-cestari/judcon2013_fuseesb">View on GitHub</a>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-          <h1 id="project_title">Judcon2013 fuseesb</h1>
-          <h2 id="project_tagline">Welcome FuseESB!! New highly distributed soluction!!!</h2>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/luan-cestari/judcon2013_fuseesb/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/luan-cestari/judcon2013_fuseesb/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+		<link rel="stylesheet" href="stylesheets/reveal.min.css">
+		<link rel="stylesheet" href="stylesheets/theme/default.css" id="theme">
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="stylesheets/zenburn.css">
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="stylesheets/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+		<!--[if lt IE 9]>
+		<script src="javascripts/html5shiv.js"></script>
+		<![endif]-->
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+		<link href="stylesheets/nv.d3.css" rel="stylesheet" type="text/css">
+		<style>
+		.mypiechart {
+		  width: 800px;
+		  border: 2px;
+		  margin-left: 225px;
+		  margin-top: 40px;
+		}
+		</style>
+		<script type="text/javascript" src="javascripts/d3.v2.min.js"></script>
+		<script type="text/javascript" src="javascripts/nv.d3.min.js"></script>
+		<script type="text/javascript" src="javascripts/legend.js"></script>
+		<script type="text/javascript" src="javascripts/pieChart.js"></script>
+		<script type="text/javascript" src="javascripts/utils.js"></script>
+<script>
 
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Judcon2013 fuseesb maintained by <a href="https://github.com/luan-cestari">luan-cestari</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("4545454");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+  var chartData = [
+    {
+      key: "One",
+      y: 5
+    },
+    {
+      key: "Two",
+      y: 2
+    },
+    {
+      key: "Three",
+      y: 9
+    },
+    {
+      key: "Four",
+      y: 7
+    },
+    {
+      key: "Five",
+      y: 4
+    },
+    {
+      key: "Six",
+      y: 3
+    },
+    {
+      key: "Seven",
+      y: .5
+    },
+    {
+      key: "Luan",
+      y: 10
+    }
+  ];
 
 
-  </body>
+nv.addGraph(function() {
+    var width = 500,
+        height = 500;
+
+    var chart = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        //.showLabels(false)
+        .values(function(d) { return d })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+      d3.select("#test1")
+          .datum([chartData])
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart);
+
+    chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+    return chart;
+});
+
+</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+                    <section>
+                        <h1>Big Data - Survival Guide!</h1>
+                        <h3>JUDCon2013</h3>
+                        <p>
+                            <small>Created by <a href="http://superseniordevelopers.blogspot.com">Luan Cestari</a> / <a href="https://plus.google.com/108300913932349459095/about">G+</a>/ <a href="http://www.facebook.com/luan.cestari">Facebook</a>/ <a href="http://twitter.com/@BR_LuanCestari">@BR_LuanCestari</a></small>
+                        </p>
+					<aside class="notes">
+                        Hit 's' to see this notes and more
+                        Also use 'esc' to have a overview
+					</aside>
+                    </section>
+					<section>
+						<h2>Who is the presenter?</h2>
+						<p>
+							Luan = algorithms + entrepreneur + computer nerd/geek + open source 
+						</p>
+                        <img width="400" height="400" src="images/01_nerd.jpg" alt="Nerd"/>
+                    </section>
+					<section>
+						<h2>Who are you?</h2>
+						<p class="fragment grow">
+							Are you a boy or a girl? 
+						</p>
+                        <img  src="images/02_pokemon.png" alt="Doctor Oak from pokemon" class="fragment roll-in"/>
+                        <aside class="notes">
+                            -Who knows anything?
+                            -Who tested some product of Big Data?
+                            -Who works with Big Data  
+                        </aside>
+                    </section>
+					<section>
+						<h2>Agenda</h2>
+                        <ul>
+                            <li>History</li>
+                            <li>Introduction to Big Data</li>
+                            <li>Lambda Architecture</li>
+                            <li>Solutions</li>
+                        </ul>
+                        <aside class="notes">
+                        A clean overview of the Big Data market, demystify the term (showing a bit of history of database and pointing some NOSQL
+                        </aside>
+                    </section>
+					<section>
+						<h2>Key points</h2>
+                        <ul>
+                            <li class="fragment highlight-red">Business/Job Opportunities</li>
+                            <li class="fragment highlight-green">Architecture</li>
+                            <li class="fragment highlight-blue">Technologies</li>
+                        </ul>
+                        <aside class="notes">
+                           New companies and in a near future it will require the Big Data)
+                           Integration (there will be a lot demand over this due the key point above and below) (talk about layers, clusters, geolocalization, different versions, different needs(may even need to create a new tool/product))
+                           Different technologies (cases, when to use and what to use)
+                        </aside>
+                    </section>
+				</section>
+
+				<section>
+					<section>
+						<h2>What's Big Data</h2>
+						<img src="images/03_big.jpg"/>
+					</section>
+					<section>
+						<h2>What's Big Data</h2>
+						<p>4 Vs</p>
+						<ul>
+							<li>Volume</li>
+							<li>Variety</li>
+							<li>Velocity</li>
+							<li>Value</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Whats size of Big Data?</h2>
+						<p>What is the size of daily job from Facebook? 100 GB 10000GB 100000GB?</p>
+						<aside class="notes">
+							Answer:????????????????????????
+						</aside>
+					</section>
+					<section>
+						<h2>Where does the data come from?</h2>
+						<ul class="column" style="width=55%">
+							<li>Customer generated Content</li>
+							<li>M2M</li>
+							<li>Sensors</li>
+						</ul>
+						<ul class="column" style="float:right; width: 39%">
+							<li>B2B</li>
+							<li>B2C</li>
+						</ul>
+						<aside class="notes">
+							Social Network
+							Consumer Devices:smartphones, Setbox (tv a cabo), Netflix, Supermercados/Compras, Cameras de segurança 
+						</aside>
+					</section>
+					<section>
+						<h2>Why so much data?</h2>
+					</section>
+					<section>
+						<h2>Unstructured data x Structured data</h2>
+						<aside class="notes">
+							* Unstructured information might have some structure (semi-structured) or even be highly structured but in ways that are unanticipated or unannounced. The information are typically text-heavy, but may contain data such as dates, numbers, and facts
+							* Examples of "unstructured data" may include books, journals, documents, metadata, health records, audio, video, analog data, files, and unstructured text such as the body of an e-mail message, Web page, or word-processor document
+
+
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>SQL!!</h2>
+						<h2>and NOSQL!!</h2>
+						<h2>and NewSQL!!</h2>
+						<h2>and ...?</h2>
+					</section>
+					<section>
+						<h2>SQL</h2>
+					</section>
+					<section>
+						<h2>NOSQL</h2>
+					</section>
+					<section>
+						<h2>Map of SQL and related</h2>
+					</section>
+				</section>
+
+				<!-- 
+				<section>
+					<h2>Test Up</h2>
+					<svg id="test1" class="mypiechart"></svg>
+
+				</section>
+				-->
+				<section>
+					<section>
+						<h2>Lambda Architecture</h2>
+					</section>
+					<section>
+						<h2>What usually happens (and goes wrong)</h2>
+					</section>
+					<section>
+						<h2>Go Wrong: A Solution that grown</h2>
+					</section>
+					<section>
+						<h2>Go Wrong: Wrong Tools/Technoliges</h2>
+						<aside class="notes">
+Harvard Business Review -> Mudança em um bank o processo batch de emprestimo (load) passou de 96 horas para 4. Ou de martketing q foi de 4.5h p 60 seconds; 2012 2.5 exabyte create a day (e dobra a cada 40 meses). Mais dados cruzam a internet a cada segundo de hj do que havia na internet inteira a 20 anos atras.
+						</aside>
+					</section>
+					<section>
+						<h2>What usually happens (and goes wrong)</h2>
+					</section>
+					<section>
+						<h2>Batch Layer</h2>
+					</section>
+					<section>
+						<h2>Service Layer</h2>
+					</section>
+					<section>
+						<h2>Speed Layer</h2>
+					</section>
+					<section>
+						<h2>Putting it all together!</h2>
+					</section>
+					<section>
+						<h2>Example using JBoss Tusk</h2>
+					</section>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Luan Cestari</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="javascripts/head.min.js"></script>
+		<script src="javascripts/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				autoSlide: 30*1000,
+				theme: Reveal.getQueryHash().theme , // Sky Beige Simple Serif Night /css/theme
+				transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+		<!-- Everything below this point is unrelated to the slideshow -->
+
+		<div class="share-reveal" style="display: none; position: absolute; bottom: 10px; left: 50%; margin-left: -205px; z-index: 20;">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-text="#JUDCon2013 - Big Data - Survival Guide! - @BR_LuanCestari" data-url="http://luan-cestari.github.io/judcon2013_bigdata?print-pdf" data-count="small" data-related="Luan Cestari"></a>
+
+			<iframe id="facebook-button" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fluan-cestari.github.io%2Fjudcon2013_bigdata%3Fprint-pdf&layout=button_count&show_faces=false&width=93&action=like&font=arial&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:24px; position: relative; top: 4px;" allowTransparency="true"></iframe>
+
+			<a href="https://twitter.com/BR_LuanCestari" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @BR_LuanCestari</a>
+		</div>
+
+		<a class="fork-reveal" style="display: none;" href="https://github.com/luan-cestari/judcon2013_bigdata"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+
+<script>
+/* <![CDATA[ */
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39948933-1', 'github.io');
+  ga('send', 'pageview');
+/* ]]> */
+</script>
+
+		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+		<script>
+			if( !navigator.userAgent.match( /iphone|ipod|android|ipad|blackberry/gi ) && !!document.querySelector ) {
+				document.querySelector( '.share-reveal' ).style.display = 'block';
+				document.querySelector( '.fork-reveal' ).style.display = 'block';
+			}
+		</script>
+
+	</body>
 </html>
+
