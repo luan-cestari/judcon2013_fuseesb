@@ -93,126 +93,199 @@
 					<section>
 						<h2>Key points</h2>
 						<ul>
-							<li class="fragment highlight-red">Business/Job Opportunities</li>
-							<li class="fragment highlight-green">Architecture</li>
-							<li class="fragment highlight-blue">Technologies</li>
+							<li class="fragment highlight-red">New Paradigms</li>
+							<li class="fragment highlight-blue">SOA</li>
 						</ul>
-						<aside class="notes">
-							It is like Big Data Key points but I'll focus in these subjects
-						</aside>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>What's Big Data</h2>
-						<img src="images/03_big.jpg"/>
-					</section>
-					<section>
-						<h2>What's Big Data</h2>
-						<p>4 Vs</p>
+						<h2>A bit of history applications</h2>
 						<ul>
-							<li>Volume</li>
-							<li>Variety</li>
-							<li>Velocity</li>
-							<li>Value</li>
+							<li>Desktop/mainframe</li>
+							<li>Client/Server</li>
+							<li>Web</li>
+							<li>Mobile</li>
+							<li>Cloud</li>
+							<li>Big Data</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Whats size of Big Data?</h2>
-						<p>What is the size of daily job from Facebook? 100 GB 10000GB 100000GB?</p>
-						<aside class="notes">
-							Answer:????????????????????????
-						</aside>
+						<h2>"Fruit Salad"</h2>
+						<p>To much data and Endpoints!!!</p>
 					</section>
 					<section>
-						<h2>Where does the data come from?</h2>
-						<ul class="column" style="width=55%">
-							<li>Customer generated Content</li>
-							<li>M2M</li>
-							<li>Sensors</li>
-						</ul>
-						<ul class="column" style="float:right; width: 39%">
-							<li>B2B</li>
-							<li>B2C</li>
+						<h2>This mean ... many integrations</h2>
+						<p>The problems</p>
+						<ul>
+							<li>No standard</li>
+							<li>No effient tests</li>
+							<li>No monitoring</li>
+							<li>...</li>
 						</ul>
 						<aside class="notes">
-							Social Network
-							Consumer Devices:smartphones, Setbox (tv a cabo), Netflix, Supermercados/Compras, Cameras de segurança 
+							Scalability, deployment, tool suport, popularity, expandability, ...
 						</aside>
 					</section>
 					<section>
-						<h2>Why so much data?</h2>
-					</section>
-					<section>
-						<h2>Unstructured data x Structured data</h2>
-						<aside class="notes">
-							* Unstructured information might have some structure (semi-structured) or even be highly structured but in ways that are unanticipated or unannounced. The information are typically text-heavy, but may contain data such as dates, numbers, and facts
-							* Examples of "unstructured data" may include books, journals, documents, metadata, health records, audio, video, analog data, files, and unstructured text such as the body of an e-mail message, Web page, or word-processor document
-
-
-						</aside>
+						<h2>Order can emerge from chaos:</h2>
+						<p class="fragment roll-in">.</p>
+						<p class="fragment roll-in">..</p>
+						<h1 class="fragment roll-in">SOA</h1>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>SQL!!</h2>
-						<h2>and NOSQL!!</h2>
-						<h2>and NewSQL!!</h2>
-						<h2>and ...?</h2>
-					</section>
-					<section>
-						<h2>SQL</h2>
-					</section>
-					<section>
-						<h2>NOSQL</h2>
-					</section>
-					<section>
-						<h2>Map of SQL and related</h2>
-					</section>
-				</section>
-
-				<!-- 
-				<section>
-					<h2>Test Up</h2>
-					<svg id="test1" class="mypiechart"></svg>
-
-				</section>
-				-->
-				<section>
-					<section>
-						<h2>Lambda Architecture</h2>
-					</section>
-					<section>
-						<h2>What usually happens (and goes wrong)</h2>
-					</section>
-					<section>
-						<h2>Go Wrong: A Solution that grown</h2>
-					</section>
-					<section>
-						<h2>Go Wrong: Wrong Tools/Technoliges</h2>
+						<h2>What is FuseESB</h2>
+						<p class="fragment highlight-red">An Enterprise Integration Framework</p>
+						<p class="fragment roll-in">More! It's Integration Suite!!!</p>
 						<aside class="notes">
-Harvard Business Review -> Mudança em um bank o processo batch de emprestimo (load) passou de 96 horas para 4. Ou de martketing q foi de 4.5h p 60 seconds; 2012 2.5 exabyte create a day (e dobra a cada 40 meses). Mais dados cruzam a internet a cada segundo de hj do que havia na internet inteira a 20 anos atras.
+							the EI patterns are from the book Enterprise Integration Patterns by Gregor hohpe and Booby Woolfy
+							Connectivity+Routing+Transformation
+							Tooling+Monitoring+Support
+							Business MGT+Registry+a lot of more 
 						</aside>
 					</section>
 					<section>
-						<h2>What usually happens (and goes wrong)</h2>
+						<h2>About Fuse history</h2>
+						<img src="images/03_history.png"/>
 					</section>
 					<section>
-						<h2>Batch Layer</h2>
+						<h2>Fuse components:</h2>
+						<p>CXF</p>
+						<p>ActiveMQ</p>
+						<p>Camel</p>
+						<p>ServiceMix</p>
+						<p>Karaf</p>
+						<p>Fabric</p>
+						<aside class="notes">
+							CXF=JAX-WS, WS-*, REST
+							ActiveMQ=JMS,STOMP,AMQP1.0 HA and Fault Tolerant
+							Camel=Enterprise Integration Patterns framework, extensible
+							ServiceMix=JBI, ESB, HA, OSGI
+							Karaf=OSGI based container, dynamic configuration, extensible shell, remote mgmt
+							Fabric=Centralized Configuration, Runtime, Registry and remote Agent Architecture (cloud)
+						</aside>
 					</section>
 					<section>
-						<h2>Service Layer</h2>
+						<h2>And there is even more components:</h2>
+						<p>Apache Felix</p>
+						<p>Apache Aries</p>
+						<p>Apache Cloudstack</p>
+						<p>and so on...</p>
+						<aside class="notes">
+							Felix=OSGI container (used to support Equinox)
+							Aries=Blueplint
+							Cloudstack=..
+							Spring OSGI for Dynamic Injections
+							Apollo= "other" MQ
+							many other projects (netty, cometD, etc)
+						</aside>
 					</section>
 					<section>
-						<h2>Speed Layer</h2>
+						<h2>Overview of core components:</h2>
+						<p>Apache Camel</p>
 					</section>
 					<section>
-						<h2>Putting it all together!</h2>
+						<h2>Apache Camel</h2>
+						<p class="fragment roll-in">Most widely used integration framework!</p>
+						<p class="fragment roll-in">+130 components</p>
+						<ul>
+							<li class="fragment roll-in">50+ endpoint</li>
+							<li class="fragment roll-in">35+ EAP</li>
+						</ul>
+						<p class="fragment roll-in">DSL (in Java & Spring)</p>
+						<p class="fragment roll-in">Deploy anywhere!</p>
+						<p class="fragment roll-in">Support Transactional SEDA architecture</p>
+						<aside class="notes">
+							Almost all frameworks that says that is a integration framework, it's probably using that in the back stage
+							Deploy=Standalone, Java EE, Tomcat, ActiveMQ, ServiceMix, Spring, ...
+							SEDA= robust, high-performance platform, a system capable of supporting massive concurrency (on the order of tens of thousands of simultaneous client connections) and avoid the pitfalls[from authors http://www.eecs.harvard.edu/~mdw/proj/seda/ ] 
+						</aside>
 					</section>
 					<section>
-						<h2>Example using JBoss Tusk</h2>
+						<h2>Apache Camel</h2>
+						<p>Basically 3 types of classes:</p>
+						<ul>
+							<li>Camel Endpoints</li>
+							<li>Camel Processors</li>
+							<li>Camel Components</li>
+						</ul>
+						<aside class="notes">
+							Endpoints=Send or receive messager
+							Components=Act as a connector to all others systems
+							Processors=All EIP and more, e.g. routing mediation transformation validation ...
+						</aside>
+					</section>
+					<section>
+						<h2>Apache Camel</h2>
+						<p>Example of Camel  DSL:</p>
+						<aside class="notes">
+							Camel describes your integration flow in one place, using an intutive language
+							We could talk about Camel all day, due so many thing we can cover! I will just go a bit depth on it to you guys understand how cool it is 
+						</aside>
+					</section>
+					<section>
+						<h2>Apache Camel</h2>
+						<p>Some Integration Patterns:</p>
+						<ul>
+							<li>Content Based Router</li>
+							<li>Message Filter</li>
+							<li>Receipent List</li>
+							<li>Splitter</li>
+							<li>Aggregator</li>
+							<li>Resequencer</li>
+							<li>Throttler</li>
+						</ul>
+						<aside class="notes">
+							Content Based Router=You can put a logic to choose a specific physical server 
+							Message Filter=avoid unintresting messages
+							Receipent List=route to a dynamyc list
+							Splitter=message has mutiple elementes, each have to be processed in a diff way
+							Aggregator=combine the result of related messages
+							Resequencer=put the messeger in order
+							Throttler=ensure endpoint not get overloaded or exceed SLA
+						</aside>
+					</section>
+					<section>
+						<h2>Apache Camel</h2>
+						<p>How Camel works:</p>
+						<ul>
+							<li>A listener endpoint</li>
+							<li>A processing component (optional)</li>
+							<li>A target endpoint</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Apache Camel</h2>
+						<p>Real world Example in Java:</p>
+						<pre style="box-shadow:none;">
+							<code contenteditable class="java">
+from("ftp://john@localhost/ftp?password=nhoj")
+	.to("xslt:MyTransform.xslt")
+	.to("activemq:queue:MyQueue")
+							</code>
+						</pre>
+						<aside class="notes">
+							read an XML file from an FTP server, process it using XSLT, and then send it to a JMS queue
+						</aside>
+					</section>
+					<section>
+						<h2>Apache Camel</h2>
+						<p>Real world Example in XML:</p>
+						<pre style="box-shadow:none;">
+							<code contenteditable class="xml">
+&lt;camelContext id=“camel” xmlns=“http://activemq.apache.org/camel/schema/spring”&gt;
+	&lt;route&gt;
+		&lt;from uri=“ftp://john@localhost/ftp?password=nhoj”/&gt;
+		&lt;to uri=“xslt:MyTransform.xslt”/&gt;
+		&lt;to uri=“activemq:queue:MyQueue”/&gt;
+	&lt;/route&gt;
+&lt;/camelContext&gt;
+							</code>
+						</pre>
 					</section>
 				</section>
 
@@ -234,7 +307,7 @@ Harvard Business Review -> Mudança em um bank o processo batch de emprestimo (l
 				progress: true,
 				history: true,
 				center: true,
-				autoSlide: 30*1000,
+				autoSlide: 60*1000,
 				theme: Reveal.getQueryHash().theme , // Sky Beige Simple Serif Night /css/theme
 				transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/fade/none
 
