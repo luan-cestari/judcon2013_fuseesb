@@ -458,19 +458,61 @@ Content-Length: nnn
 					</section>
 					<section>
 						<h2>Introduction to OSGi</h2>
-						<p>Overview:</p>
+						<p>OSGi Alliance</p>
+						<p>Expert groups define the plataform</p>
+						<aside class="notes">
+							OSGi bron in 1999 for embedded devices
+							There is many containers: Felix, Equinox, Knopernsh, Concierge, Virgo
+						</aside> 
 					</section>
 					<section>
-						<h2>OSGi Alliance</h2>
-						<p>Expert group (like in JSR) defined OSGi Service Plataform</p>
+						<h2>Introduction to OSGi</h2>
+						<p>Problems of Java EE</p>
+						<ul>
+							<li>Lack of modularity</li>
+							<li>Service Tracking</li>
+							<li>Criteria-based service selection</li>
+							<li>Life cyle for Components</li>
+							<li>Mutiple versions of Components</li>
+							<li>Hot-swapping of Components</li>
+						</ul>
+						<aside class="notes">
+							All java projects have the mod. problem, the Jigsaw project target to solve this (in Java 9)
+							Jar hell and many dependecies not necessary
+						</aside> 
+					</section>
+					<section>
+						<h2>OSGi</h2>
+						<img src="images/06_layering_osgi.png" />
+						<aside class="notes">
+							Bundle / Component Oriented, Run Mutiple Applications, Single VM, Separate Classloader per bundle, Dynamic bundle/modules	
+							Specification cover Blueprint, Remote Service, JNDI, JTA, JDBC, Web Applications, etc
+							The bundle/modules are components with specific version, that can be managed/changed in runtime
+							Bundle=project/component + metadata
+							OSGi container manager the bundle and the bundaries between bundles
+							There is a Life Cycle to guaratee the coehesion and enforces sophisticated
+							OSGi uses by default the MANIFEST.MF where should be specified the versions
+							It remember maven, acctually the Karaf have a service that could create the Manifest from POM
+						</aside> 
 					</section>
 					<section>
 						<h2>Apache Karaf</h2>
-						<p>Overview:</p>
+						<p>Lightweight OSGi container</p>
+						<p>Felix as OSGi Runtime</p>
+						<p>Provisioning</p>
+						<p>Powerful command line shell and Web</p>
+						<p>Highly extensible</p>
 					</section>
 					<section>
 						<h2>Apache Karaf</h2>
-						<p>Feature:</p>
+						<p>Dynamic Configuration</p>
+						<p>Logging from mutplie APIs</p>
+						<p>Deployer</p>
+						<p>OS integration</p>
+						<p>Security</p>
+						<p>Instances Management</p>
+						<aside class="notes">
+							Security=JAAS	
 					</section>
 				</section>
 				<section>
@@ -488,6 +530,20 @@ Content-Length: nnn
 							<li>Use Karaf as Container</li>
 						</ul>
 					</section>
+					<section>
+						<h2>Apache ServiceMix</h2>
+						<img src="images/05_servicemix_karaf.png" />
+						<aside class="notes">
+							Blueprint = Dependecy injection / IoC; Handle the legacy code; Handle OSGi Dynamic (hiding the API)
+						</aside> 
+					</section>
+					<section>
+						<h2>Apache ServiceMix</h2>
+						<p>Normalized Message Router (NMR) (Camel Container)</p>
+						<p>JBI Container</p>
+						<p>Handles XML, POJO</p>
+						<p>Listener for endpoints and wiring them</p>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -496,11 +552,54 @@ Content-Length: nnn
 					</section>
 					<section>
 						<h2>Fuse Fabric</h2>
-						<p>Overview:</p>
+						<p>Why:</p>
+						<ul>
+							<li>ServiceMix and ActiveMQ is complex to Configure</li>
+							<li>Require a lot of upfront knowledge</li>
+							<li>Different environment (private/public/hybrid cloud)</li>
+							<li>Location</li>
+						<aside class="notes">
+							Easy to go wrong
+						</aside> 
+						</ul>
 					</section>
 					<section>
-						<h2>Fuse Fabric</h2>
-						<p>Feature:</p>
+						<h2>Fuse Fabric - Features</h2>
+						<p>Support Hybrid deployments on premise, on cloud, on both</p>
+						<ul>
+							<li>Endpoints can be relocated</li>
+							<li>Endpoints can be load balanced</li>
+							<li>Endpoints can be elastic</li>
+							<li>Endpoints can be highly available</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Fuse Fabric - Features</h2>
+						<p>Destributed Configuration</p>
+						<ul>
+							<li>Configuration has tb be accessed across mutiple domains</li>
+							<li>Configuration has to highly available</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Fuse Fabric - Features</h2>
+						<p>Runtime Registry</p>
+						<ul>
+							<li>Discovery of services</li>
+							<li>Discovery of endpoints</li>
+							<li>Discovery of ActiveMQ</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Fuse Fabric - Features</h2>
+						<p>Destributed Management</p>
+						<ul>
+							<li>Easy elastic scaling of services</li>
+							<li>Monitoring and control of resouces</li>
+						</ul>
+						<aside class="notes">
+							Fuse uses Zookeeper as a Distributed Registry Service, we could have a presentation only over this topic
+						</aside> 
 					</section>
 				</section>
 				<section>
