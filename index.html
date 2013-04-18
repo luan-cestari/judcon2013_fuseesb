@@ -328,14 +328,74 @@ from("ftp://john@localhost/ftp?password=nhoj")
 					<section>
 						<h2>Apache CXF</h2>
 						<p>Rest example:</p>
+						<pre style="box-shadow:none;">
+							<code contenteditable class="java">
+@Path("/user-service/")
+@Produces("application/xml")
+public interface UserService {
+	
+	@GET
+	@Path("/users")
+	@Produces({"application/xml", "application/json"})
+	public UserCollection getUsers();
+
+	@GET
+	@Path("/user/{id}")
+	public User getUser(@PathParam("id") Integer id);
+}
+							</code>
+						</pre>
 					</section>
 					<section>
 						<h2>Apache CXF</h2>
 						<p>SOAP and WSDL:</p>
+						<ul>
+							<li>Standards for message exchange</li>
+							<li>SOAP=XML=Envelope[Header+Body]</li>
+							<li>WSDL</li>
+							<ul>
+								<li>Operations</li>
+								<li>Input/Output</li>
+								<li>Easy to verify adherence</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Apache CXF</h2>
+						<p>SOAP Request:</p>
+						<pre style="box-shadow:none;">
+							<code contenteditable class="xml">
+POST /InStock HTTP/1.1
+Host: www.example.org
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn
+
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2001/12/soap-envelope&quot; soap:encodingStyle=&quot;http://www.w3.org/2001/12/soap-encoding&quot;&gt;
+&lt;soap:Body xmlns:m=&quot;http://www.example.org/stock&quot;&gt;
+  &lt;m:GetStockPrice&gt;
+    &lt;m:StockName&gt;IBM&lt;/m:StockName&gt;
+  &lt;/m:GetStockPrice&gt;
+&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+							</code>
+						</pre>
 					</section>
 					<section>
 						<h2>Apache CXF</h2>
 						<p>JAX-WS and Security:</p>
+						<ul>
+							<li>JAXB reference implementation</li>
+							<li>Can generate code</li>
+							<li>WS-Notification</li>
+							<li>WS Token Service</li>
+						</ul>
+						<aside class="notes">
+							WS-Notification makes Web services to use the "publish and subscribe" messaging pattern and in CXF its use activemq
+							Authentication Tokens: Username, SAML, Kerberos, X509
+							Support for Symmetric, Asymmetric and Transport bindings
+							Pluggable token validators, claim handlers, SAML token customisers
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -346,10 +406,113 @@ from("ftp://john@localhost/ftp?password=nhoj")
 					<section>
 						<h2>Apache ActiveMQ</h2>
 						<p>Overview:</p>
+						<ul>
+							<li>JMS 1.1 and 2.0</li>
+							<li>AMQP 1.0</li>
+							<li>Clustering and Fault Tolerance</li>
+							<li>Publish/subscribe, point to point, message groups, streaming, destributed transaction and more</li>
+							<li>Java, C/C++ and .NET</li>
+						</ul>
+						<aside class="notes">
+							AMQP, MQTT, OpenWire, REST, RSS and Atom, Stomp, WSIF, WS Notification, XMPP
+						</aside>
 					</section>
 					<section>
 						<h2>Apache ActiveMQ</h2>
-						<p>Feature:</p>
+						<p>Failover</p>
+						<img src="images/04_failover.png" />
+					</section>
+					<section>
+						<h2>Apache ActiveMQ</h2>
+						<p>High Availability:</p>
+						<ul>
+							<li>Fully replicated Master/Slave</li>
+							<li>JDBC Master/Slave</li>
+							<li>Shared File System Master/Slave</li>
+						</ul>
+						<aside class="notes">
+							1=shared nothing, fully replicated, only one slave to a master, no auto failback, no auto sync after desaster
+							2=not so fast,no restriction on number of slaves
+							3=for destributed FS, no restriction on number of slaves
+						</aside>
+					</section>
+					<section>
+						<h2>Apache ActiveMQ</h2>
+						<p>Broker Topologies</p>
+						<ul>
+							<li>Link ActiveMQ Brokers together</li>
+							<li>Store and foward</li>
+							<li>Uni-directional by default</li>
+							<li>All Destinations are global</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Apache ActiveMQ</h2>
+						<p>Horizontal and Vertical Scaling</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Overview of core components:</h2>
+						<p>Apache Karaf</p>
+					</section>
+					<section>
+						<h2>Introduction to OSGi</h2>
+						<p>OSGi Alliance</p>
+						<p>Expert groups define the plataform</p>
+						<aside class="notes">
+							OSGi bron in 1999 for embedded devices
+							There is many containers: Felix, Equinox, Knopernsh, Concierge, Virgo
+						</aside> 
+					</section>
+					<section>
+						<h2>Introduction to OSGi</h2>
+						<p>Problems of Java EE</p>
+						<ul>
+							<li>Lack of modularity</li>
+							<li>Service Tracking</li>
+							<li>Criteria-based service selection</li>
+							<li>Life cyle for Components</li>
+							<li>Mutiple versions of Components</li>
+							<li>Hot-swapping of Components</li>
+						</ul>
+						<aside class="notes">
+							All java projects have the mod. problem, the Jigsaw project target to solve this (in Java 9)
+							Jar hell and many dependecies not necessary
+						</aside> 
+					</section>
+					<section>
+						<h2>OSGi</h2>
+						<img src="images/06_layering_osgi.png" />
+						<aside class="notes">
+							Bundle / Component Oriented, Run Mutiple Applications, Single VM, Separate Classloader per bundle, Dynamic bundle/modules	
+							Specification cover Blueprint, Remote Service, JNDI, JTA, JDBC, Web Applications, etc
+							The bundle/modules are components with specific version, that can be managed/changed in runtime
+							Bundle=project/component + metadata
+							OSGi container manager the bundle and the bundaries between bundles
+							There is a Life Cycle to guaratee the coehesion and enforces sophisticated
+							OSGi uses by default the MANIFEST.MF where should be specified the versions
+							It remember maven, acctually the Karaf have a service that could create the Manifest from POM
+						</aside> 
+					</section>
+					<section>
+						<h2>Apache Karaf</h2>
+						<p>Lightweight OSGi container</p>
+						<p>Felix as OSGi Runtime</p>
+						<p>Provisioning</p>
+						<p>Powerful command line shell and Web</p>
+						<p>Highly extensible</p>
+					</section>
+					<section>
+						<h2>Apache Karaf</h2>
+						<p>Dynamic Configuration</p>
+						<p>Logging from mutplie APIs</p>
+						<p>Deployer</p>
+						<p>OS integration</p>
+						<p>Security</p>
+						<p>Instances Management</p>
+						<aside class="notes">
+							Security=JAAS	
 					</section>
 				</section>
 				<section>
@@ -360,10 +523,26 @@ from("ftp://john@localhost/ftp?password=nhoj")
 					<section>
 						<h2>Apache ServiceMix</h2>
 						<p>Overview:</p>
+						<ul>
+							<li>Open Source ESB</li>
+							<li>SOAP and REST web services</li>
+							<li>Messaging</li>
+							<li>Use Karaf as Container</li>
+						</ul>
 					</section>
 					<section>
 						<h2>Apache ServiceMix</h2>
-						<p>Feature:</p>
+						<img src="images/05_servicemix_karaf.png" />
+						<aside class="notes">
+							Blueprint = Dependecy injection / IoC; Handle the legacy code; Handle OSGi Dynamic (hiding the API)
+						</aside> 
+					</section>
+					<section>
+						<h2>Apache ServiceMix</h2>
+						<p>Normalized Message Router (NMR) (Camel Container)</p>
+						<p>JBI Container</p>
+						<p>Handles XML, POJO</p>
+						<p>Listener for endpoints and wiring them</p>
 					</section>
 				</section>
 				<section>
@@ -373,33 +552,54 @@ from("ftp://john@localhost/ftp?password=nhoj")
 					</section>
 					<section>
 						<h2>Fuse Fabric</h2>
-						<p>Overview:</p>
+						<p>Why:</p>
+						<ul>
+							<li>ServiceMix and ActiveMQ is complex to Configure</li>
+							<li>Require a lot of upfront knowledge</li>
+							<li>Different environment (private/public/hybrid cloud)</li>
+							<li>Location</li>
+						<aside class="notes">
+							Easy to go wrong
+						</aside> 
+						</ul>
 					</section>
 					<section>
-						<h2>Fuse Fabric</h2>
-						<p>Feature:</p>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>Overview of core components:</h2>
-						<p>Apache Karaf</p>
-					</section>
-					<section>
-						<h2>Introduction to OSGi</h2>
-						<p>Overview:</p>
+						<h2>Fuse Fabric - Features</h2>
+						<p>Support Hybrid deployments on premise, on cloud, on both</p>
+						<ul>
+							<li>Endpoints can be relocated</li>
+							<li>Endpoints can be load balanced</li>
+							<li>Endpoints can be elastic</li>
+							<li>Endpoints can be highly available</li>
+						</ul>
 					</section>
 					<section>
-						<h2>OSGi Alliance</h2>
-						<p>Expert group (like in JSR) defined OSGi Service Plataform</p>
+						<h2>Fuse Fabric - Features</h2>
+						<p>Destributed Configuration</p>
+						<ul>
+							<li>Configuration has tb be accessed across mutiple domains</li>
+							<li>Configuration has to highly available</li>
+						</ul>
 					</section>
 					<section>
-						<h2>Apache Karaf</h2>
-						<p>Overview:</p>
+						<h2>Fuse Fabric - Features</h2>
+						<p>Runtime Registry</p>
+						<ul>
+							<li>Discovery of services</li>
+							<li>Discovery of endpoints</li>
+							<li>Discovery of ActiveMQ</li>
+						</ul>
 					</section>
 					<section>
-						<h2>Apache Karaf</h2>
-						<p>Feature:</p>
+						<h2>Fuse Fabric - Features</h2>
+						<p>Destributed Management</p>
+						<ul>
+							<li>Easy elastic scaling of services</li>
+							<li>Monitoring and control of resouces</li>
+						</ul>
+						<aside class="notes">
+							Fuse uses Zookeeper as a Distributed Registry Service, we could have a presentation only over this topic
+						</aside> 
 					</section>
 				</section>
 				<section>
