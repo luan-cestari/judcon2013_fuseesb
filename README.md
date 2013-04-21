@@ -7,4 +7,4 @@ The presentation is in the gh-pages branch (default branch used by github to you
 
 https://github.com/luan-cestari/judcon2013_fuseesb/tree/gh-pages
 
-http://luan-cestari.github.io/judcon2013_bigdata?print-pdf
+http://luan-cestari.github.io/judcon2013_fuseesb?print-pdf
